@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Reunion 2025</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff7ee;
+            color: #000;
+        }
+
+        header {
+            background: url('skyclouds.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        #countdown {
+            font-size: 1.4rem;
+            color: #d9715f;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            color: #d9715f;
+            font-size: 1.7rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 12px;
+            column-gap: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #bbb;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #d9715f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        button:hover {
+            background: #c45f52;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #6a5f5f;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 110px 20px;
+            }
+
+            .logo {
+                width: 200px;
+                height: 200px;
+            }
+
+            header h1 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 80px 15px;
+            }
+
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            header h1 {
+                font-size: 1.9rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            #countdown {
+                font-size: 1.1rem;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo5.jpg" alt="Community Logo" class="logo">
+
+    <h1>Batang Nichols Reunion: Vancouver, Canada 2027 2025</h1>
+    <p>Reconnect, celebrate, and enjoy a day with former friends, classmates,batchmates and neighbors.</p>
+
+    <p id="countdown"></p>
+</header>
+
+<section class="section">
+
+    <div class="box">
+        <h2>Event Details</h2>
+
+        <div class="details-grid">
+            <div><strong>Date:</strong> September 4, 2027</div>
+            <div><strong>Time:</strong> 4:PM – 11:00 PM</div>
+            <div><strong>Location:</strong> TBD</div>
+            <div><strong>Address:</strong> TBD</div>
+        </div>
+
+        <p style="margin-top:18px;">
+            Join us for authentic Canadian food, exciting games, good music, and great conversations!  
+            
+        </p>
+    </div>
+
+    <div class="box">
+        <h2>Announcements:</h2>
+        <ul>
+            <li>🎉 Volunteers needed for setup at 3 PM.</li>
+            <li>🍲Cocktails will be served.Open Bar available.</li>
+            <li>📸Photo Booth at your convenience.TBD</li>
+        </ul>
+    </div>
+
+    <!-- ✅ PHOTO GALLERY: 5 PHOTOS -->
+    <div class="box">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="Meeteam1.jpg" alt="Gallery Photo 1">
+            <img src="Meeteam2.jpg" alt="Gallery Photo 2">
+            <img src="Meeteam3.jpg" alt="Gallery Photo 3">
+            <img src="Meeteam4.jpg" alt="Gallery Photo 4">
+            <img src="Hoodiesample.jpg" alt="Gallery Photo 5">
+        </div>
+    </div>
+
+        <!-- ⭐ UPDATED RSVP SECTION WITH EMAIL FORWARDING -->
+    <div class="box">
+        <h2>RSVP</h2>
+
+        <form action="YOUR_FORMSPREE_URL_HERE" method="POST">
+
+            <label>Name:</label>
+            <input type="text" name="name" required placeholder="Your full name">
+
+            <label>Email:</label>
+            <input type="email" name="_replyto" required placeholder="Your email address">
+
+            <label>Number of Guests:</label>
+            <input type="number" name="guests" min="0" placeholder="How many guests?">
+
+            <label>Message (optional):</label>
+            <textarea name="message" rows="4" placeholder="Anything you'd like to add..."></textarea>
+
+            <!-- Optional redirect after submission -->
+            <input type="hidden" name="_next" value="thankyou.html">
+
+            <button type="submit">Submit RSVP</button>
+        </form>
+
+        <p style="font-size:0.9rem;color:#555;margin-top:8px;">
+            Your RSVP will be emailed directly to the organizers.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    © 2027 Batang Nichols Group • Bringing people together.
+</footer>
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+    const eventDate = new Date("September 4, 2027 00:00:00").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        let distance = eventDate - now;
+
+        if (distance < 0) {
+            document.getElementById("countdown").innerHTML = "The event is happening today!";
+            return;
+        }
+
+        const oneDay = 1000 * 60 * 60 * 24;
+
+        const totalDays = Math.floor(distance / oneDay);
+
+        const months = Math.floor(totalDays / 30);
+        const weeks = Math.floor((totalDays % 30) / 7);
+        const days = (totalDays % 30) % 7;
+
+        document.getElementById("countdown").innerHTML =
+            `${months} months, ${weeks} weeks, ${days} days until the event!`;
+    }, 1000);
+</script>
+
+</body>
+</html>
+
