@@ -1,103 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batang Nichols Reunion 2027</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batang Nichols Reunion 2027</title>
 
-    <style>
-        body {
+<style>
+body {
     margin: 0;
-    padding-top: 70px;  /* prevents overlap */
+    padding-top: 70px; /* for fixed top nav */
     font-family: "Segoe UI", Arial, sans-serif;
     background: #fff7ee;
     color: #000;
 }
 
-        /* Navigation Bar */
-        nav {
+/* Main Navigation Bar */
+nav.main-nav {
     background: #d9715f;
     padding: 15px 20px;
     display: flex;
     justify-content: center;
     gap: 30px;
-    position: fixed; /* changed from sticky */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;     /* makes bar span full page */
-    z-index: 9999;   /* ensures it stays ABOVE the header */
+    width: 100%;
+    z-index: 9999;
 }
 
-        nav a {
-            color: white;
-            font-size: 1.1rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav.main-nav a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav.main-nav a:hover {
+    text-decoration: underline;
+}
 
-        header {
-            background: url('skyclouds.jpg') no-repeat center center;
-            background-size: cover;
-            padding: 80px 20px;
-            text-align: center;
-        }
+/* Secondary Payment Nav */
+nav.payment-nav {
+    background: #f2b8a0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
 
-        .logo {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ffffff;
-            margin-bottom: 20px;
-        }
+nav.payment-nav a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        .section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
+nav.payment-nav a:hover {
+    text-decoration: underline;
+}
 
-        .box {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
+header {
+    background: url('skyclouds.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 20px;
+    text-align: center;
+}
 
-        .box h2 {
-            margin-top: 0;
-            color: #d9715f;
-        }
+.logo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    margin-bottom: 20px;
+}
 
-        .details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 20px;
-        }
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #6a5f5f;
-        }
+.box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
 
-        @media (max-width: 600px) {
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.box h2 {
+    margin-top: 0;
+    color: #d9715f;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #6a5f5f;
+}
+
+@media (max-width: 600px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
+<!-- Main Navigation -->
+<nav class="main-nav">
     <a href="index.html">Home</a>
     <a href="gallery.html">Photo Gallery</a>
     <a href="rsvp.html">RSVP</a>
@@ -123,6 +143,11 @@
         </div>
     </div>
 
+    <!-- Secondary Payment Nav -->
+    <nav class="payment-nav">
+        <a href="payment.html">Payment Methods</a>
+    </nav>
+
     <!-- Map -->
     <div class="box">
         <h2>Location Map</h2>
@@ -130,38 +155,6 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.746397242946!2d-123.00728712261188!3d49.22506657138779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548677f6de59c5bb%3A0xaa5f59c5e8a4fe5c!2sHilton%20Vancouver%20Metrotown!5e0!3m2!1sen!2sca!4v1707773600000!5m2!1sen!2sca" 
             width="100%" height="350" style="border:0;border-radius:12px;" allowfullscreen loading="lazy">
         </iframe>
-
-        <a href="https://maps.app.goo.gl/oPSKwkdHcBPDDjEUA" target="_blank" 
-           style="display:inline-block;margin-top:10px;padding:12px 20px;background:#d9715f;color:white;border-radius:10px;text-decoration:none;">
-           Open in Google Maps
-        </a>
-    </div>
-
-    <!-- Directions -->
-    <div class="box">
-        <h2>Directions</h2>
-        <p><strong>From Vancouver:</strong> Take Kingsway east → Right on McKay Ave.</p>
-        <p><strong>From Surrey:</strong> Hwy 1 west → Willingdon Ave exit → Kingsway → McKay Ave.</p>
-        <p><strong>From Richmond:</strong> Knight St Bridge → Kingsway → McKay Ave.</p>
-    </div>
-
-    <!-- Parking -->
-    <div class="box">
-        <h2>Parking Information</h2>
-        <ul>
-            <li>Underground parking available</li>
-            <li>Mall parking at Metropolis at Metrotown</li>
-            <li>Limited street parking</li>
-        </ul>
-    </div>
-
-    <!-- Transit -->
-    <div class="box">
-        <h2>Transit Information</h2>
-        <ul>
-            <li>2-minute walk from Metrotown Station (Expo Line)</li>
-            <li>Nearby bus routes: 19, 49, 130, 133, 144, 430</li>
-        </ul>
     </div>
 
 </section>
@@ -170,21 +163,17 @@
     © 2027 Batang Nichols Group • Bringing people together.
 </footer>
 
-<!-- Countdown Script -->
 <script>
 const eventDate = new Date("September 4, 2027 00:00:00").getTime();
 setInterval(() => {
     const now = new Date().getTime();
     const d = eventDate - now;
-
     if (d < 0) {
         document.getElementById("countdown").innerHTML = "The event is happening today!";
         return;
     }
-
     const days = Math.floor(d / (1000*60*60*24));
-    document.getElementById("countdown").innerHTML =
-        days + " days until the event!";
+    document.getElementById("countdown").innerHTML = days + " days until the event!";
 }, 1000);
 </script>
 
