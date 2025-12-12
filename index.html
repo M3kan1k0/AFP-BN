@@ -47,7 +47,7 @@ nav.payment-nav {
     justify-content: center;
     gap: 20px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 nav.payment-nav a {
@@ -93,6 +93,9 @@ header {
 .box h2 {
     margin-top: 0;
     color: #d9715f;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .details-grid {
@@ -116,7 +119,7 @@ footer {
 </head>
 <body>
 
-<!-- Main Navigation -->
+<!-- MAIN NAV -->
 <nav class="main-nav">
     <a href="index.html">Home</a>
     <a href="gallery.html">Photo Gallery</a>
@@ -133,7 +136,7 @@ footer {
 
 <section class="section">
 
-    <!-- Event Details -->
+    <!-- EVENT DETAILS -->
     <div class="box">
         <h2>Event Details</h2>
         <div class="details-grid">
@@ -144,18 +147,55 @@ footer {
         </div>
     </div>
 
-    <!-- Secondary Payment Nav -->
+    <!-- PAYMENT NAV -->
     <nav class="payment-nav">
         <a href="payment.html">Payment Methods</a>
     </nav>
 
-    <!-- Map -->
+    <!-- MAP -->
     <div class="box">
-        <h2>Location Map</h2>
+        <h2>📍 Location Map</h2>
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.746397242946!2d-123.00728712261188!3d49.22506657138779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548677f6de59c5bb%3A0xaa5f59c5e8a4fe5c!2sHilton%20Vancouver%20Metrotown!5e0!3m2!1sen!2sca!4v1707773600000!5m2!1sen!2sca" 
-            width="100%" height="350" style="border:0;border-radius:12px;" allowfullscreen loading="lazy">
+            width="100%" height="350" style="border:0;border-radius:12px;" 
+            allowfullscreen loading="lazy">
         </iframe>
+
+        <a href="https://maps.app.goo.gl/oPSKwkdHcBPDDjEUA" target="_blank" 
+           style="display:inline-block;margin-top:10px;padding:12px 20px;background:#d9715f;color:white;border-radius:10px;text-decoration:none;">
+           Open in Google Maps
+        </a>
+    </div>
+
+    <!-- DIRECTIONS -->
+    <div class="box">
+        <h2>📍 Directions</h2>
+        <p><strong>From Vancouver:</strong> Kingsway east → Right on McKay Ave.</p>
+        <p><strong>From Surrey:</strong> Hwy 1 west → Willingdon Ave exit → Kingsway → McKay Ave.</p>
+        <p><strong>From Richmond:</strong> Knight St Bridge → Kingsway → McKay Ave.</p>
+        <p><strong>From Coquitlam/Burnaby North:</strong> Hwy 1 → Kensington exit → Kingsway → McKay Ave.</p>
+    </div>
+
+    <!-- PARKING -->
+    <div class="box">
+        <h2>🚗 Parking Information</h2>
+        <ul>
+            <li>Hilton underground parking available</li>
+            <li>Metropolis at Metrotown mall parking (3–4 mins walk)</li>
+            <li>Street parking on McKay, Bennett, Hazel streets</li>
+            <li>Some areas may require payment or validation</li>
+        </ul>
+    </div>
+
+    <!-- TRANSIT -->
+    <div class="box">
+        <h2>🚆 Transit Information</h2>
+        <ul>
+            <li><strong>SkyTrain:</strong> Metrotown Station (2 minute walk)</li>
+            <li><strong>Buses:</strong> 19, 49, 130, 133, 144, 430</li>
+            <li>Easy pickup area for Uber, Lyft, Taxi at Metrotown</li>
+            <li>SkyTrain weekend service until ~1:15 AM</li>
+        </ul>
     </div>
 
 </section>
@@ -164,6 +204,7 @@ footer {
     © 2027 Batang Nichols Group • Bringing people together.
 </footer>
 
+<!-- COUNTDOWN SCRIPT -->
 <script>
 const eventDate = new Date("September 4, 2027 00:00:00").getTime();
 setInterval(() => {
@@ -179,5 +220,4 @@ setInterval(() => {
 </script>
 
 </body>
-
 </html>
