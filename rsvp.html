@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP</title>
+
+    <style>
+        body { 
+            margin: 0; 
+            font-family: "Segoe UI", Arial, sans-serif; 
+            background: #fff7ee; 
+        }
+
+        nav {
+            background: #d9715f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover { text-decoration: underline; }
+
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #bbb;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #d9715f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        button:hover {
+            background: #c45f52;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Photo Gallery</a>
+    <a href="payment.html">Payment</a>
+    <a href="merchandise.html">Merchandise</a>
+</nav>
+
+<section class="section">
+
+    <div class="box">
+        <h2 style="color:#d9715f;">RSVP</h2>
+
+        <form action="https://formspree.io/f/mjknpeza" method="POST">
+
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Email:</label>
+            <input type="email" name="_replyto" required>
+
+            <label>Number of Guests:</label>
+            <input type="number" name="guests" min="0">
+
+            <label>Shirt Size:</label>
+            <select name="shirt_size" required>
+                <option value="" selected disabled>Select...</option>
+                <option>S</option><option>M</option><option>L</option>
+                <option>XL</option><option>2XL</option><option>3XL</option>
+            </select>
+
+            <label>Batch / Year:</label>
+            <select name="batch" required>
+                <option selected disabled>Select...</option>
+                <option>1970s</option>
+                <option>1980</option><option>1981</option><option>1982</option>
+                <option>1983</option><option>1984</option><option>1985</option>
+                <option>1986</option><option>1987</option><option>1988</option>
+                <option>1989</option>
+                <option>1990s</option><option>2000s</option><option>Other</option>
+            </select>
+
+            <label>Message (optional):</label>
+            <textarea name="message" rows="4"></textarea>
+
+            <input type="hidden" name="_next" value="thankyou.html">
+
+            <button type="submit">Submit RSVP</button>
+        </form>
+    </div>
+
+</section>
+
+</body>
+</html>
