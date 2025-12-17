@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+
+    <style>
+        body { 
+            margin: 0; 
+            font-family: "Segoe UI", Arial, sans-serif; 
+            background: #fff7ee; 
+            color: #000; 
+        }
+
+        nav {
+            background: #d9715f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover { text-decoration: underline; }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Photo Gallery</a>
+    <a href="rsvp.html">RSVP</a>
+</nav>
+
+<section class="section">
+    <div class="box">
+        <h2 style="color:#d9715f;">Photo Gallery</h2>
+
+        <div class="gallery">
+            <img src="Meeteam1.jpg">
+            <img src="Meeteam2.jpg">
+            <img src="Meeteam3.jpg">
+            <img src="Meeteam4.jpg">
+            <img src="HoodieSample.jpg">
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+
+
+        
