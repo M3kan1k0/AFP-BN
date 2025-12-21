@@ -1,42 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP Submitted</title>
-    <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #fff7ee;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .box {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #d9715f;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Batang Nichols Reunion 2027</title>
+<style>
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff7ee;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+h1 { color: #d9715f; text-align: center; }
+h2 { color: #1e6fbf; margin-top: 30px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #d9715f;
+    color: white;
+}
+.total-box {
+    background: #fff1e8;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.hidden { display: none; }
+</style>
 </head>
 <body>
-    <div class="box">
-        <h2>Thank You!</h2>
-        <p>Your RSVP has been successfully submitted.</p>
-        <p>We look forward to seeing you at the reunion.</p>
-        <p>📅 Event Date: September 4, 2027<br>📍 Venue: Hilton Hotel</p>
-        <a href="index.html">Return to Home</a>
+
+<div class="container">
+    <h1>Thank You for Your RSVP!</h1>
+    <p style="text-align:center;">Here’s a summary of your submission:</p>
+
+    <!-- Attendee -->
+    <div id="attendeeSection">
+        <h2>Attendee</h2>
+        <table>
+            <tbody id="attendeeTable"></tbody>
+        </table>
     </div>
+
+    <!-- Guests -->
+    <div id="guestSection" class="hidden">
+        <h2>Guests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Guest</th>
+                    <th>Full Name</th>
+                    <th>T-Shirt Size</th>
+                    <th>Fee</th>
+                </tr>
+            </thead>
+            <tbody id="guestTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Merchandise -->
+    <div id="merchSection" class="hidden">
+        <h2>Merchandise</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="merchTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Total -->
+    <div class="total-box" id="grandTotalBox"></div>
+</div>
+
+<script>
+// Retrieve RSVP data from localStorage
+const rsvpData = JSON.parse(localStorage.getItem("rsvpData") || "{}");
+
+// ATTENDEE
+const attendeeTable = document.getElementById("attendeeTable");
+let attendeeFee = 0;
+if (rsvpData.attendance === "Yes") attendeeFee = 150;
+
+attendeeTable.innerHTML = `
+<tr><td><strong>Name</strong></td><td>${rsvpData.firstName} ${rsvpData.lastName}</td></tr>
+<tr><td><strong>Batch</strong></td><td>${rsvpData.batch}</td></tr>
+<tr><td><strong>Attending</strong></td><td>${rsvpData.attendance}</td></tr>
+<tr><td><strong>T-Shirt Size</strong></td><td>${rsvpData.shirt || "-"}</td></tr>
+<tr><td><strong>RSVP Fee</strong></td><td>$${attendeeFee}</td></tr>
+`;
+
+// GUESTS
+const guestSection = document.getElementById("guestSection");
+const guestTable = document.getElementById("guestTable");
+let guestsFee = 0;
+
+if (rsvpData.guests && rsvpData.guests.length > 0) {
+    guestSection.classList.remove("hidden");
+    rsvpData.guests.forEach((g, i) => {
+        guestTable.innerHTML += `
+        <tr>
+            <td>Guest ${i+1}</td>
+            <td>${g.first} ${g.last}</td>
+            <td>${g.shirt}</td>
+            <td>$150</td>
+        </tr>`;
+        guestsFee += 150;
+    });
+}
+
+// MERCHANDISE
+const merchSection = document.getElementById("merchSection");
+const merchTable = document.getElementById("merchTable");
+let merchTotal = 0;
+
+if (rsvpData.merch) {
+    const { tshirtQty, capQty, hoodieQty, tshirtSize, hoodieSize } = rsvpData.merch;
+
+    if (tshirtQty > 0) {
+        merchSection.classList.remove("hidden");
+        merchTable.innerHTML += `
+        <tr>
+            <td>T-Shirt</td>
+            <td>${tshirtSize || "-"}</td>
+            <td>${tshirtQty}</td>
+            <td>$${tshirtQty * 25}</td>
+        </tr>`;
+        merchTotal += tshirtQty * 25;
+    }
+    if (capQty > 0) {
+        merchSection.classList.remove("hidden");
+        merchTable.innerHTML += `
+        <tr>
+            <td>Bull Cap</td>
+            <td>One Size</td>
+            <td>${capQty}</td>
+            <td>$${capQty * 15}</td>
+        </tr>`;
+        merchTotal += capQty * 15;
+    }
+    if (hoodieQty > 0) {
+        merchSection.classList.remove("hidden");
+        merchTable.innerHTML += `
+        <tr>
+            <td>Hoodie</td>
+            <td>${hoodieSize || "-"}</td>
+            <td>${hoodieQty}</td>
+            <td>$${hoodieQty * 40}</td>
+        </tr>`;
+        merchTotal += hoodieQty * 40;
+    }
+}
+
+// GRAND TOTAL
+const grandTotal = attendeeFee + guestsFee + merchTotal;
+document.getElementById("grandTotalBox").textContent = `Grand Total: $${grandTotal}`;
+
+// Clear localStorage
+localStorage.removeItem("rsvpData");
+</script>
+
 </body>
 </html>
