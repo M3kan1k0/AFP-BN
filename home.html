@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Batang Nichols Reunion 2027</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff7ee;
+    color: #000;
+    padding-top: 70px;
+}
+
+/* MAIN NAV */
+nav.main-nav {
+    background: #d9715f;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+nav.main-nav a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* PAGE HEADER */
+.page-header {
+    text-align: center;
+    padding: 80px 20px 30px;
+}
+
+.page-header h1 {
+    color: #d9715f;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* BUTTONS */
+button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: bold;
+}
+
+#exitBtn {
+    background: #c45f52;
+    color: white;
+}
+
+#exitBtn:hover {
+    background: #a9463c;
+}
+
+#rsvpBtn {
+    background: #d9715f;
+    color: white;
+}
+
+#rsvpBtn:hover {
+    background: #c45f52;
+}
+
+/* SECTION */
+.section {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<nav class="main-nav">
+    <a href="home.html">Home</a>
+    <a href="gallery.html">Photo Gallery</a>
+    <a href="rsvp.html">RSVP</a>
+    <a href="payment.html">Payment</a>
+    <a href="merchandise.html">Merchandise</a>
+</nav>
+
+<div class="page-header">
+    <h1>Welcome to the Batang Nichols Reunion 2027</h1>
+    <p>Reconnect, reminisce, and celebrate with your classmates. Navigate through the reunion site below.</p>
+</div>
+
+<section class="section">
+    <button id="rsvpBtn" onclick="window.location.href='rsvp.html'">RSVP Now</button>
+    <button id="exitBtn" onclick="exitSite()">Exit</button>
+</section>
+
+<footer style="text-align:center; padding:25px; color:#6a5f5f;">
+    © 2027 Batang Nichols Group • Bringing people together
+</footer>
+
+<script>
+function exitSite() {
+    // Attempt to close tab (works in most browsers if opened via script)
+    window.open('', '_self');
+    window.close();
+
+    // If close fails, redirect to an external page
+    setTimeout(() => {
+        window.location.href = 'https://www.google.com';
+    }, 200);
+}
+</script>
+
+</body>
+</html>
