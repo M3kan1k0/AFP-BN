@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review & Payment - Batang Nichols Reunion</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #fff7ee;
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* NAV */
+nav {
+    background: #d9715f;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+h2 {
+    color: #d9715f;
+}
+
+/* BUTTONS */
+button {
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.primary {
+    background: #d9715f;
+    color: white;
+}
+
+.primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.secondary {
+    background: #ccc;
+}
+
+/* LAYOUT */
+.row {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    max-width: 700px;
+    width: 90%;
+    border-radius: 12px;
+}
+
+.payment-option {
+    margin-top: 20px;
+}
+
+.payment-option a {
+    color: #d9715f;
+    font-weight: bold;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="rsvp.html">RSVP</a>
+    <a href="payment.html">Payment</a>
+    <a href="merchandise.html">Merchandise</a>
+    <a href="gallery.html">Gallery</a>
+</nav>
+
+<div class="container">
+    <h2>Review Your RSVP & Payment</h2>
+
+    <div id="reviewBox"></div>
+
+    <div class="row">
+        <button class="secondary" id="backBtn">Back to RSVP</button>
+        <button class="primary" id="confirmBtn">Reviewed and Confirmed</button>
+    </div>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div class="modal" id="paymentModal">
+    <div class="modal-content">
+        <h2>Select Payment Method</h2>
+
+        <div class="payment-option">
+            <strong>PayPal</strong><br>
+            Send to <a href="mailto:roryclement@shaw.ca">roryclement@shaw.ca</a><br>
+            <a href="https://www.paypal.com" target="_blank">Open PayPal</a>
+        </div>
+
+        <div class="payment-option">
+            <strong>Interac e-Transfer (Canada)</strong><br>
+            Email: <strong>bnreunion.vancouver@gmail.com</strong><br>
+            Password: <em>Provided after confirmation</em>
+        </div>
+
+        <div class="payment-option">
+            <strong>GCash</strong><br>
+            0917-XXX-XXXX
+        </div>
+
+        <div class="payment-option">
+            <strong>Bank Transfer</strong><br>
+            Batang Nichols Group<br>
+            Account #: 123-456-789
+        </div>
+
+        <!-- FORMSPREE FORM (background submit) -->
+        <form id="finalForm">
+            <input type="hidden" name="submission_data" id="submissionData">
+
+            <div class="modal-actions">
+                <button type="button" class="secondary" id="cancelPaymentBtn">
+                    Cancel
+                </button>
+                <button type="submit" class="primary" id="processedBtn">
+                    Payment Processed
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+// -------- REVIEW DATA --------
+const params = new URLSearchParams(window.location.search);
+const guests = params.get("guests") ? JSON.parse(params.get("guests")) : [];
+
+let html = `
+<strong>Main Attendee:</strong> ${params.get("first")} ${params.get("last")}<br>
+<strong>Email:</strong> ${params.get("email")}<br><br>
+<strong>RSVP Total:</strong> $${params.get("rsvp")}<br>
+<strong>Merchandise Total:</strong> $${params.get("merch")}<br>
+<hr>
+<strong style="font-size:1.25rem;color:#d9715f">
+Grand Total: $${params.get("total")}
+</strong><br><br>
+`;
+
+if (guests.length) {
+    html += "<strong>Guests:</strong><br>";
+    guests.forEach((g, i) => {
+        html += `Guest ${i + 1}: ${g.first} ${g.last} (${g.shirt})<br>`;
+    });
+}
+
+document.getElementById("reviewBox").innerHTML = html;
+document.getElementById("submissionData").value =
+    html.replace(/<br>/g, "\n").replace(/<[^>]*>/g, "");
+
+// -------- NAV / MODAL --------
+document.getElementById("backBtn").onclick = () =>
+    window.location.href = "rsvp.html";
+
+document.getElementById("confirmBtn").onclick = () =>
+    document.getElementById("paymentModal").style.display = "flex";
+
+document.getElementById("cancelPaymentBtn").onclick = () =>
+    document.getElementById("paymentModal").style.display = "none";
+
+// -------- BACKGROUND FORMSPREE SUBMIT --------
+document.getElementById("finalForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const btn = document.getElementById("processedBtn");
+    btn.disabled = true;
+    btn.textContent = "Processing...";
+
+    const formData = new FormData(e.target);
+
+    try {
+        await fetch("https://formspree.io/f/mvzpavbr", {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+    } catch (err) {
+        // Fail silently — we still redirect
+        console.warn("Formspree submission issue:", err);
+    }
+
+    // Always redirect
+    window.location.href = "afterpayment.html";
+});
+</script>
+
+</body>
+</html>
