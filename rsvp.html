@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RSVP - Batang Nichols Reunion 2027</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background:#fff7ee;
+    margin:0;
+}
+
+nav {
+    background:#d9715f;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+nav a {
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.container {
+    max-width:800px;
+    margin:40px auto;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+}
+
+label {
+    margin-top:15px;
+    display:block;
+    font-weight:bold;
+}
+
+input,
+select {
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    box-sizing:border-box;
+}
+
+.section-title {
+    color:#d9715f;
+    margin-top:25px;
+}
+
+button {
+    margin-top:25px;
+    width:100%;
+    padding:15px;
+    font-size:1.1rem;
+    background:#d9715f;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#c45d4c;
+}
+
+.guest {
+    border:1px solid #ddd;
+    padding:15px;
+    margin-top:15px;
+    border-radius:6px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="gallery.html">Gallery</a>
+<a href="merchandise.html">Merchandise</a>
+
+</nav>
+
+
+
+<div class="container">
+
+
+<h2 class="section-title" style="text-align:center;">
+RSVP
+</h2>
+
+
+
+<form
+id="rsvpForm"
+action="https://formspree.io/f/mvznjyly"
+method="POST">
+
+
+
+<label>
+First Name
+</label>
+
+<input
+type="text"
+name="first_name"
+required>
+
+
+
+<label>
+Last Name
+</label>
+
+<input
+type="text"
+name="last_name"
+required>
+
+
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+name="_replyto"
+required>
+
+
+
+<label>
+Your T-Shirt Size
+</label>
+
+
+<select name="main_shirt_size" required>
+
+<option value="" disabled selected>
+Select Size
+</option>
+
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+
+</select>
+
+
+
+<label>
+Number of Guests
+</label>
+
+
+<input
+type="number"
+id="guestCount"
+min="0"
+value="0">
+
+
+
+<div id="guestFields"></div>
+
+
+
+<input
+type="hidden"
+name="guest_details"
+id="guestDetails">
+
+
+
+<input
+type="hidden"
+name="_next"
+value="index.html">
+
+
+
+<button type="submit">
+
+SUBMIT ATTENDEE'S REGISTRATION
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+<script>
+
+const guestCount = document.getElementById("guestCount");
+const guestFields = document.getElementById("guestFields");
+const rsvpForm = document.getElementById("rsvpForm");
+
+
+
+guestCount.oninput = function() {
+
+    guestFields.innerHTML = "";
+
+
+    for (let i = 1; i <= Number(guestCount.value); i++) {
+
+
+        guestFields.innerHTML += `
+
+        <div class="guest">
+
+            <label>
+                Guest ${i} Full Name
+            </label>
+
+            <input
+                type="text"
+                name="guest_${i}_name"
+                placeholder="Enter guest full name"
+                required>
+
+        </div>
+
+        `;
+
+    }
+
+};
+
+
+
+
+
+rsvpForm.onsubmit = function() {
+
+
+    const guests = [];
+
+
+    document.querySelectorAll(".guest").forEach((guest) => {
+
+        guests.push(
+            guest.querySelector("input").value
+        );
+
+    });
+
+
+
+    document.getElementById("guestDetails").value =
+        JSON.stringify(guests);
+
+
+
+    // Clear browser saved form data
+    setTimeout(() => {
+
+        rsvpForm.reset();
+
+        guestFields.innerHTML = "";
+
+        guestCount.value = 0;
+
+    }, 100);
+
+
+
+    return true;
+
+};
+
+
+
+
+
+// Clear form if user returns using browser back button
+
+window.onpageshow = function(event) {
+
+    if (event.persisted) {
+
+        rsvpForm.reset();
+
+        guestFields.innerHTML = "";
+
+        guestCount.value = 0;
+
+    }
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
