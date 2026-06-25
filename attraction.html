@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Vancouver Attractions | Batang Nichols Reunion 2027
+</title>
+
+
+
+<style>
+
+
+/* =========================
+   SAME THEME AS INDEX.HTML
+========================= */
+
+
+body {
+
+    margin:0;
+
+    padding-top:70px;
+
+    font-family:"Segoe UI", Arial, sans-serif;
+
+    background:#fff7ee;
+
+    color:#000;
+
+}
+
+
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+
+nav.main-nav {
+
+
+    background:#d9715f;
+
+
+    padding:15px 20px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:20px;
+
+
+    flex-wrap:wrap;
+
+
+    position:fixed;
+
+
+    top:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    z-index:999;
+
+
+}
+
+
+
+nav.main-nav a {
+
+
+    color:white;
+
+
+    font-size:1.1rem;
+
+
+    text-decoration:none;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+nav.main-nav a:hover {
+
+
+    text-decoration:underline;
+
+
+}
+
+
+
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+
+.page-header {
+
+
+    background:
+
+    linear-gradient(
+
+        to bottom,
+
+        #7ec8e3,
+
+        #dff3ff
+
+    );
+
+
+    text-align:center;
+
+
+    padding:50px 20px;
+
+
+}
+
+
+
+.page-header h1 {
+
+
+    color:#003366;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+.page-header p {
+
+
+    font-size:1.2rem;
+
+
+}
+
+
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+
+.section {
+
+
+    max-width:1100px;
+
+
+    margin:auto;
+
+
+    padding:30px 20px;
+
+
+}
+
+
+
+
+.box {
+
+
+    background:white;
+
+
+    padding:25px;
+
+
+    border-radius:12px;
+
+
+    box-shadow:
+
+    0 4px 10px rgba(0,0,0,.1);
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+.box h2 {
+
+
+    color:#d9715f;
+
+
+    margin-top:0;
+
+
+}
+
+
+
+
+
+/* =========================
+   ATTRACTION CARDS
+========================= */
+
+
+.gallery {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+
+    gap:20px;
+
+
+}
+
+
+
+.card {
+
+
+    background:white;
+
+
+    border-radius:12px;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 4px 10px rgba(0,0,0,.1);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.card:hover {
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+.card img {
+
+
+    width:100%;
+
+
+    height:250px;
+
+
+    object-fit:cover;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+.card-content {
+
+
+    padding:20px;
+
+
+}
+
+
+
+.card-content h3 {
+
+
+    color:#d9715f;
+
+
+    margin-top:0;
+
+
+}
+
+
+
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+
+#lightbox {
+
+
+    display:none;
+
+
+    position:fixed;
+
+
+    top:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    background:rgba(0,0,0,.9);
+
+
+    z-index:9999;
+
+
+}
+
+
+
+#lightbox img {
+
+
+    position:absolute;
+
+
+    top:50%;
+
+
+    left:50%;
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+    max-width:90%;
+
+
+    max-height:85%;
+
+
+}
+
+
+
+.close {
+
+
+    position:absolute;
+
+
+    top:20px;
+
+
+    right:40px;
+
+
+    color:white;
+
+
+    font-size:45px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+.caption {
+
+
+    position:absolute;
+
+
+    bottom:25px;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+
+
+    text-align:center;
+
+
+    padding:25px;
+
+
+    color:#6a5f5f;
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+
+<nav class="main-nav">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="gallery.html">
+Photo Gallery
+</a>
+
+
+<a href="rsvp.html">
+Registration
+</a>
+
+
+<a href="payment.html">
+Payment
+</a>
+
+
+<a href="merchandise.html">
+Reunion Memorabilia
+</a>
+
+
+<a href="attendees.html">
+Confirmed Attendees
+</a>
+
+<a href="exit.html">
+EXIT
+</a>
+
+
+</nav>
+
+
+
+
+
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+
+
+<div class="page-header">
+
+
+<h1>
+Vancouver Attractions
+</h1>
+
+
+<p>
+Explore the beautiful places to visit during the
+Batang Nichols Reunion in Vancouver, Canada.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<section class="section">
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Popular Vancouver Destinations
+</h2>
+
+
+<p>
+Click any photo to view a larger image.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="gallery">
+
+
+
+
+
+<!-- CANADA PLACE -->
+
+
+<div class="card">
+
+
+<img src="canada place.jpg"
+alt="Canada Place"
+onclick="openLightbox(this)">
+
+
+
+<div class="card-content">
+
+
+<h3>
+Canada Place
+</h3>
+
+
+<p>
+A famous Vancouver waterfront landmark with
+beautiful harbour views and the iconic white sails.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- STANLEY PARK -->
+
+
+<div class="card">
+
+
+<img src="stanley park.jpg"
+alt="Stanley Park"
+onclick="openLightbox(this)">
+
+
+
+<div class="card-content">
+
+
+<h3>
+Stanley Park
+</h3>
+
+
+<p>
+A world-famous urban park featuring forests,
+seawalls, beaches, gardens, and scenic views.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- GASTOWN -->
+
+
+<div class="card">
+
+
+<img src="gastown.jpg"
+alt="Gastown"
+onclick="openLightbox(this)">
+
+
+
+<div class="card-content">
+
+
+<h3>
+Gastown
+</h3>
+
+
+<p>
+Vancouver's historic district known for cobblestone
+streets, restaurants, and the Steam Clock.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- GRANVILLE ISLAND -->
+
+
+<div class="card">
+
+
+<img src="grandville island.jpg"
+alt="Granville Island"
+onclick="openLightbox(this)">
+
+
+
+<div class="card-content">
+
+
+<h3>
+Granville Island
+</h3>
+
+
+<p>
+A waterfront destination with markets, shops,
+restaurants, and local art.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- CAPILANO -->
+
+
+<div class="card">
+
+
+<img src="capilano suspension bridge.jpg"
+alt="Capilano Suspension Bridge"
+onclick="openLightbox(this)">
+
+
+
+<div class="card-content">
+
+
+<h3>
+Capilano Suspension Bridge
+</h3>
+
+
+<p>
+A spectacular rainforest attraction featuring
+a famous suspension bridge above the canyon.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     PHOTO LIGHTBOX
+========================= -->
+
+
+<div id="lightbox">
+
+
+<span class="close"
+onclick="closeLightbox()">
+
+&times;
+
+</span>
+
+
+
+<img id="lightbox-img">
+
+
+
+<div id="caption"
+class="caption">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<footer>
+
+© 2027 Batang Nichols Group • Bringing people together.
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+function openLightbox(image){
+
+
+document.getElementById("lightbox").style.display="block";
+
+
+document.getElementById("lightbox-img").src=image.src;
+
+
+document.getElementById("caption").innerHTML=image.alt;
+
+
+}
+
+
+
+
+
+
+
+function closeLightbox(){
+
+
+document.getElementById("lightbox").style.display="none";
+
+
+}
+
+
+
+
+
+
+
+window.onclick=function(event){
+
+
+let lightbox=document.getElementById("lightbox");
+
+
+
+if(event.target===lightbox){
+
+
+closeLightbox();
+
+
+}
+
+
+}
+
+
+
+
+
+
+document.addEventListener(
+"keydown",
+
+function(event){
+
+
+if(event.key==="Escape"){
+
+
+closeLightbox();
+
+
+}
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
