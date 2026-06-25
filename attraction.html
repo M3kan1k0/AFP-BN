@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vancouver Attractions</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    margin:0;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    cursor:pointer;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card-content h3{
+    margin-top:0;
+    color:#003366;
+}
+
+.lightbox{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+}
+
+.lightbox-content{
+    display:block;
+    max-width:90%;
+    max-height:90%;
+    margin:auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.caption{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to Vancouver</h1>
+    <p>Explore Vancouver's Most Popular Tourist Attractions</p>
+</header>
+
+<div class="gallery">
+
+    <div class="card">
+        <img src="canada place.jpg"
+             alt="Canada Place"
+             onclick="openLightbox(this)">
+        <div class="card-content">
+            <h3>Canada Place</h3>
+            <p>Iconic waterfront landmark and cruise ship terminal in downtown Vancouver.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="stanley park.jpg"
+             alt="Stanley Park"
+             onclick="openLightbox(this)">
+        <div class="card-content">
+            <h3>Stanley Park</h3>
+            <p>Famous urban park featuring scenic seawalls, forests, beaches, and totem poles.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="gastown.jpg"
+             alt="Gastown"
+             onclick="openLightbox(this)">
+        <div class="card-content">
+            <h3>Gastown</h3>
+            <p>Historic district known for its cobblestone streets and Steam Clock.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="grandville island.jpg"
+             alt="Granville Island"
+             onclick="openLightbox(this)">
+        <div class="card-content">
+            <h3>Granville Island</h3>
+            <p>Popular destination featuring markets, restaurants, shops, and waterfront views.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="capilano suspension bridge.jpg"
+             alt="Capilano Suspension Bridge"
+             onclick="openLightbox(this)">
+        <div class="card-content">
+            <h3>Capilano Suspension Bridge</h3>
+            <p>World-famous suspension bridge surrounded by beautiful rainforest scenery.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Lightbox -->
+
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+
+    <img id="lightbox-img" class="lightbox-content">
+
+    <div id="caption" class="caption"></div>
+</div>
+
+<script>
+
+function openLightbox(img){
+    document.getElementById("lightbox").style.display="block";
+    document.getElementById("lightbox-img").src=img.src;
+    document.getElementById("caption").innerHTML=img.alt;
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+
+window.onclick=function(event){
+    const lightbox=document.getElementById("lightbox");
+
+    if(event.target===lightbox){
+        lightbox.style.display="none";
+    }
+}
+
+</script>
+
+</body>
+</html>
