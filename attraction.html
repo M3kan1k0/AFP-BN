@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Vancouver Attractions | Batang Nichols Reunion 2027
+</title>
+
+
+<style>
+
+
+/* =========================
+   MAIN WEBSITE THEME
+========================= */
+
+
+body {
+
+margin:0;
+
+padding-top:70px;
+
+font-family:"Segoe UI", Arial, sans-serif;
+
+background:#fff7ee;
+
+color:#000;
+
+}
+
+
+
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+
+nav.main-nav {
+
+background:#d9715f;
+
+padding:15px 20px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+}
+
+
+
+nav.main-nav a {
+
+color:white;
+
+font-size:1.1rem;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+
+
+nav.main-nav a:hover {
+
+text-decoration:underline;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+
+.page-header {
+
+background:
+
+linear-gradient(
+
+to bottom,
+
+#7ec8e3,
+
+#dff3ff
+
+);
+
+
+text-align:center;
+
+padding:55px 20px;
+
+
+}
+
+
+
+.page-header h1 {
+
+color:#003366;
+
+font-size:2.3rem;
+
+margin-bottom:10px;
+
+}
+
+
+
+.page-header p {
+
+font-size:1.2rem;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   CONTENT AREA
+========================= */
+
+
+.container {
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px 20px;
+
+}
+
+
+
+
+
+.intro-box {
+
+background:white;
+
+border-radius:12px;
+
+padding:25px;
+
+box-shadow:
+
+0 4px 10px rgba(0,0,0,.1);
+
+margin-bottom:35px;
+
+}
+
+
+
+.intro-box h2 {
+
+color:#d9715f;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   ATTRACTION GRID
+========================= */
+
+
+.gallery {
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+
+
+
+
+.card {
+
+background:white;
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 4px 12px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+
+
+.card:hover {
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 8px 18px rgba(0,0,0,.25);
+
+}
+
+
+
+.card img {
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+
+
+.card img:hover {
+
+transform:scale(1.08);
+
+}
+
+
+
+.card-content {
+
+padding:20px;
+
+}
+
+
+
+.card-content h3 {
+
+color:#d9715f;
+
+margin-top:0;
+
+}
+
+
+
+.badge {
+
+display:inline-block;
+
+background:#d9715f;
+
+color:white;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-size:.85rem;
+
+margin-bottom:10px;
+
+}
+
+
+
+
+
+.info {
+
+line-height:1.6;
+
+}
+
+
+
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+.map-button {
+
+display:inline-block;
+
+background:#d9715f;
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+margin-top:10px;
+
+}
+
+
+
+.map-button:hover {
+
+background:#c45d4d;
+
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+#lightbox {
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,0.92);
+
+z-index:9999;
+
+}
+
+
+#lightbox img {
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+max-width:90%;
+
+max-height:80%;
+
+border-radius:12px;
+
+}
+
+
+.close {
+
+position:absolute;
+
+top:20px;
+
+right:35px;
+
+font-size:45px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+.caption {
+
+position:absolute;
+
+bottom:40px;
+
+width:100%;
+
+text-align:center;
+
+color:white;
+
+font-size:22px;
+
+}
+
+
+
+/* Previous / Next Buttons */
+
+.nav-button {
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+background:rgba(255,255,255,.3);
+
+color:white;
+
+font-size:40px;
+
+padding:10px 20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+
+.nav-button:hover {
+
+background:rgba(255,255,255,.6);
+
+}
+
+
+#previous {
+
+left:20px;
+
+}
+
+
+#next {
+
+right:20px;
+
+}
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+
+text-align:center;
+
+padding:25px;
+
+color:#6a5f5f;
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+
+@media(max-width:600px){
+
+
+.page-header h1 {
+
+font-size:1.8rem;
+
+}
+
+
+nav.main-nav a {
+
+font-size:.95rem;
+
+}
+
+
+.card img {
+
+height:220px;
+
+}
+
+
+.nav-button {
+
+font-size:28px;
+
+padding:8px 12px;
+
+}
+
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav class="main-nav">
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="gallery.html">
+Photo Gallery
+</a>
+
+
+<a href="rsvp.html">
+Registration
+</a>
+
+
+<a href="payment.html">
+Payment
+</a>
+
+
+<a href="merchandise.html">
+Reunion Memorabilia
+</a>
+
+
+<a href="attendees.html">
+Confirmed Attendees
+</a>
+
+
+<a href="attraction.html">
+🌲 Vancouver Attractions
+</a>
+
+
+<a href="exit.html">
+EXIT
+</a>
+
+
+</nav>
+
+
+
+
+
+<!-- PAGE HEADER -->
+
+<div class="page-header">
+
+
+<h1>
+Vancouver Attractions
+</h1>
+
+
+<p>
+Explore beautiful places to visit during your Batang Nichols Reunion 2027 trip.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+
+<div class="intro-box">
+
+
+<h2>
+Discover British Columbia
+</h2>
+
+
+<p>
+From Vancouver landmarks to mountain adventures,
+these destinations are perfect places to explore before or after the reunion.
+</p>
+
+
+</div>
+
+<!-- =========================
+     ATTRACTION GALLERY
+========================= -->
+
+
+<div class="gallery">
+
+
+
+
+
+<!-- CANADA PLACE -->
+
+<div class="card">
+
+
+<img src="canada place.jpg"
+alt="Canada Place"
+onclick="openLightbox(0)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌊 Waterfront Landmark
+</span>
+
+
+<h3>
+Canada Place
+</h3>
+
+
+<div class="info">
+
+<p>
+Iconic Vancouver waterfront landmark featuring
+the famous white sails and beautiful harbour views.
+</p>
+
+
+<p>
+🚗 Approx. 20 minutes from Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Canada+Place+Vancouver"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- STANLEY PARK -->
+
+
+<div class="card">
+
+
+<img src="stanley park.jpg"
+alt="Stanley Park"
+onclick="openLightbox(1)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌲 Nature
+</span>
+
+
+<h3>
+Stanley Park
+</h3>
+
+
+<div class="info">
+
+<p>
+One of the world's most beautiful urban parks,
+with forests, seawall paths, beaches, and scenic views.
+</p>
+
+
+<p>
+🚗 Approx. 25 minutes from Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Stanley+Park+Vancouver"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- GASTOWN -->
+
+
+<div class="card">
+
+
+<img src="gastown.jpg"
+alt="Gastown"
+onclick="openLightbox(2)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏛 Historic District
+</span>
+
+
+<h3>
+Gastown
+</h3>
+
+
+<div class="info">
+
+<p>
+Vancouver's oldest neighbourhood, famous for
+cobblestone streets and the Steam Clock.
+</p>
+
+
+<p>
+🚗 Approx. 20 minutes from Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Gastown+Vancouver"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- GRANVILLE ISLAND -->
+
+
+<div class="card">
+
+
+<img src="grandville island.jpg"
+alt="Granville Island"
+onclick="openLightbox(3)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🎨 Market & Arts
+</span>
+
+
+<h3>
+Granville Island
+</h3>
+
+
+<div class="info">
+
+<p>
+A waterfront destination featuring public markets,
+restaurants, shops, and local artists.
+</p>
+
+
+<p>
+🚗 Approx. 20 minutes from Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Granville+Island+Vancouver"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- CAPILANO -->
+
+
+<div class="card">
+
+
+<img src="capilano suspension bridge.jpg"
+alt="Capilano Suspension Bridge"
+onclick="openLightbox(4)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌉 Adventure
+</span>
+
+
+<h3>
+Capilano Suspension Bridge
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-famous rainforest attraction with a
+spectacular suspension bridge over the canyon.
+</p>
+
+
+<p>
+🚗 Approx. 30 minutes from Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Capilano+Suspension+Bridge"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+<!-- GROUSE MOUNTAIN -->
+
+
+<div class="card">
+
+
+<img src="grouse mountain.jpg"
+alt="Grouse Mountain"
+onclick="openLightbox(5)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏔 Mountain
+</span>
+
+
+<h3>
+Grouse Mountain
+</h3>
+
+
+<div class="info">
+
+<p>
+A popular mountain destination offering spectacular
+views of Vancouver, hiking, wildlife, and the Skyride gondola.
+</p>
+
+
+<p>
+🚗 Approx. 35 minutes from Hilton Vancouver Metrotown
+</p>
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Grouse+Mountain"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- CYPRESS MOUNTAIN -->
+
+
+<div class="card">
+
+
+<img src="cypress mountain.jpg"
+alt="Cypress Mountain"
+onclick="openLightbox(6)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+⛷ Mountain Views
+</span>
+
+
+<h3>
+Cypress Mountain
+</h3>
+
+
+<div class="info">
+
+<p>
+A beautiful mountain escape known for skiing,
+hiking, and panoramic views of Vancouver.
+</p>
+
+
+<p>
+🚗 Approx. 45 minutes from Hilton Vancouver Metrotown
+</p>
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Cypress+Mountain+Vancouver"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- WHISTLER -->
+
+
+<div class="card">
+
+
+<img src="whistler mountain.jpg"
+alt="Whistler Mountain"
+onclick="openLightbox(7)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏔 Day Trip
+</span>
+
+
+<h3>
+Whistler Village
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-famous mountain resort featuring alpine scenery,
+shopping, dining, and outdoor adventures.
+</p>
+
+
+<p>
+🚗 Approx. 2 hours from Hilton Vancouver Metrotown
+</p>
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Whistler+Village"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- BUTCHART GARDENS -->
+
+
+<div class="card">
+
+
+<img src="butchart gardens.jpg"
+alt="Butchart Gardens"
+onclick="openLightbox(8)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌸 Garden
+</span>
+
+
+<h3>
+Butchart Gardens
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-renowned garden near Victoria featuring
+beautiful flowers, pathways, and seasonal displays.
+</p>
+
+
+<p>
+🚗 Approx. 4 hours including ferry travel
+</p>
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Butchart+Gardens"
+target="_blank">
+
+📍 View Map
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+
+<div id="lightbox">
+
+
+<span class="close"
+onclick="closeLightbox()">
+
+&times;
+
+</span>
+
+
+
+<div id="previous"
+class="nav-button"
+onclick="changePhoto(-1)">
+
+&#10094;
+
+</div>
+
+
+
+<img id="lightbox-image">
+
+
+
+<div id="next"
+class="nav-button"
+onclick="changePhoto(1)">
+
+&#10095;
+
+</div>
+
+
+
+<div id="caption"
+class="caption">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<footer>
+
+© 2027 Batang Nichols Group • Bringing people together.
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+const photos = [
+
+
+"canada place.jpg",
+
+"stanley park.jpg",
+
+"gastown.jpg",
+
+"grandville island.jpg",
+
+"capilano suspension bridge.jpg",
+
+"grouse mountain.jpg",
+
+"cypress mountain.jpg",
+
+"whistler mountain.jpg",
+
+"butchart gardens.jpg"
+
+
+];
+
+
+
+const names = [
+
+
+"Canada Place",
+
+"Stanley Park",
+
+"Gastown",
+
+"Granville Island",
+
+"Capilano Suspension Bridge",
+
+"Grouse Mountain",
+
+"Cypress Mountain",
+
+"Whistler Mountain",
+
+"Butchart Gardens"
+
+
+];
+
+
+
+let currentPhoto = 0;
+
+
+
+
+function openLightbox(index){
+
+
+currentPhoto=index;
+
+
+document.getElementById("lightbox").style.display="block";
+
+
+showPhoto();
+
+
+}
+
+
+
+
+
+function showPhoto(){
+
+
+document.getElementById("lightbox-image").src =
+photos[currentPhoto];
+
+
+document.getElementById("caption").innerHTML =
+names[currentPhoto];
+
+
+}
+
+
+
+
+
+
+
+function changePhoto(direction){
+
+
+currentPhoto += direction;
+
+
+
+if(currentPhoto < 0){
+
+currentPhoto = photos.length - 1;
+
+}
+
+
+
+if(currentPhoto >= photos.length){
+
+currentPhoto = 0;
+
+}
+
+
+
+showPhoto();
+
+
+}
+
+
+
+
+
+
+
+function closeLightbox(){
+
+
+document.getElementById("lightbox").style.display="none";
+
+
+}
+
+
+
+
+
+window.onclick=function(event){
+
+
+let box=document.getElementById("lightbox");
+
+
+if(event.target===box){
+
+closeLightbox();
+
+}
+
+
+}
+
+
+
+
+
+
+
+document.addEventListener(
+"keydown",
+
+function(event){
+
+
+if(event.key==="Escape"){
+
+closeLightbox();
+
+}
+
+
+
+if(event.key==="ArrowRight"){
+
+changePhoto(1);
+
+}
+
+
+
+if(event.key==="ArrowLeft"){
+
+changePhoto(-1);
+
+}
+
+
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
