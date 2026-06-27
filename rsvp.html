@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registration - Batang Nichols Reunion 2027</title>
+
+
+<style>
+
+
+body {
+
+    margin:0;
+
+    padding-top:75px;
+
+    font-family:"Segoe UI", Arial, sans-serif;
+
+    background:#fff7ee;
+
+    color:#333;
+
+}
+
+
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+
+nav.main-nav {
+
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+
+    background:#d9715f;
+
+
+    padding:15px 20px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+
+    z-index:9999;
+
+
+}
+
+
+
+nav.main-nav a {
+
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+
+}
+
+
+nav.main-nav a:hover {
+
+
+    text-decoration:underline;
+
+
+}
+
+
+
+/* ==========================
+   HEADER
+========================== */
+
+
+header {
+
+
+    background:
+
+    linear-gradient(
+
+    to bottom,
+
+    #7ec8e3,
+
+    #dff3ff
+
+    );
+
+
+    text-align:center;
+
+
+    padding:60px 20px;
+
+
+}
+
+
+
+header h1 {
+
+
+    color:#d9715f;
+
+    font-size:2.5rem;
+
+
+}
+
+
+
+header p {
+
+
+    max-width:800px;
+
+    margin:auto;
+
+    font-size:1.1rem;
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+/* ==========================
+   FORM CONTAINER
+========================== */
+
+
+.container {
+
+
+    max-width:850px;
+
+
+    margin:40px auto;
+
+
+    background:white;
+
+
+    padding:35px;
+
+
+    border-radius:15px;
+
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.15);
+
+
+}
+
+
+
+.section-title {
+
+
+    color:#d9715f;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+.center {
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+/* ==========================
+   FORM ELEMENTS
+========================== */
+
+
+label {
+
+
+    display:block;
+
+
+    margin-top:15px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+input,
+
+select {
+
+
+    width:100%;
+
+
+    padding:12px;
+
+
+    margin-top:5px;
+
+
+    border:1px solid #ccc;
+
+
+    border-radius:6px;
+
+
+    box-sizing:border-box;
+
+
+    font-size:1rem;
+
+
+}
+
+
+
+button {
+
+
+    margin-top:25px;
+
+
+    width:100%;
+
+
+    padding:15px;
+
+
+    font-size:1.1rem;
+
+
+    background:#d9715f;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    border-radius:8px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+button:hover {
+
+
+    background:#c45d4c;
+
+
+}
+
+
+
+
+/* ==========================
+   GUEST BOX
+========================== */
+
+
+.guest {
+
+
+    border:1px solid #ddd;
+
+
+    padding:15px;
+
+
+    margin-top:15px;
+
+
+    border-radius:8px;
+
+
+    background:#fffaf5;
+
+
+}
+
+
+
+
+.note {
+
+
+    color:#d9715f;
+
+
+    font-style:italic;
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+footer {
+
+
+    text-align:center;
+
+
+    padding:25px;
+
+
+    color:#666;
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+nav.main-nav a {
+
+
+    font-size:.9rem;
+
+
+}
+
+
+.container {
+
+
+    width:90%;
+
+
+    padding:20px;
+
+
+}
+
+
+
+header h1 {
+
+
+    font-size:2rem;
+
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+<nav class="main-nav">
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="gallery.html">
+Photo Gallery
+</a>
+
+
+<a href="rsvp.html">
+Registration
+</a>
+
+
+<a href="payment.html">
+Payment
+</a>
+
+
+<a href="merchandise.html">
+Reunion Memorabilia
+</a>
+
+
+<a href="attendees.html">
+Confirmed Attendees
+</a>
+
+
+<a href="attraction.html">
+Vancouver Attractions
+</a>
+
+
+<a href="exit.html">
+EXIT
+</a>
+
+
+</nav>
+
+
+
+
+
+<header>
+
+
+<h1>
+
+Batang Nichols Reunion 2027 Registration
+
+</h1>
+
+
+<p>
+
+Reconnect with classmates, friends, and neighbors.
+Please complete the registration form below.
+
+</p>
+
+
+</header>
+
+
+
+
+
+<div class="container">
+
+
+
+<h2 class="section-title center">
+
+REGISTRATION
+
+</h2>
+
+
+
+
+<form
+
+id="rsvpForm"
+
+action="https://formspree.io/f/mvznjyly"
+
+method="POST">
+
+
+
+
+
+<label>
+
+First Name
+
+</label>
+
+
+<input
+
+type="text"
+
+name="first_name"
+
+required>
+
+
+
+
+
+<label>
+
+Last Name
+
+</label>
+
+
+<input
+
+type="text"
+
+name="last_name"
+
+required>
+
+
+
+
+
+
+<label>
+
+Are you a graduate of NABES?
+
+</label>
+
+
+<select
+
+id="nabesGraduate"
+
+name="nabes_graduate"
+
+required>
+
+
+<option value="" disabled selected>
+
+Select Answer
+
+</option>
+
+
+<option value="Yes">
+
+Yes
+
+</option>
+
+
+<option value="No">
+
+No
+
+</option>
+
+
+</select>
+
+
+
+
+
+<div id="nabesYearDiv" style="display:none;">
+
+
+<label>
+
+What Year?
+
+</label>
+
+
+<input
+
+type="number"
+
+name="nabes_grad_year"
+
+id="nabesYear"
+
+min="1900"
+
+max="2099"
+
+placeholder="Enter graduation year">
+
+
+</div>
+
+<!-- ==========================
+   PCSHS GRADUATE QUESTION
+========================== -->
+
+
+<label>
+
+Are you a graduate of PCSHS?
+
+</label>
+
+
+<select
+
+id="pcshsGraduate"
+
+name="pcshs_graduate"
+
+required>
+
+
+<option value="" disabled selected>
+
+Select Answer
+
+</option>
+
+
+<option value="Yes">
+
+Yes
+
+</option>
+
+
+<option value="No">
+
+No
+
+</option>
+
+
+</select>
+
+
+
+
+<div id="pcshsYearDiv" style="display:none;">
+
+
+<label>
+
+What Year?
+
+</label>
+
+
+<input
+
+type="number"
+
+name="pcshs_grad_year"
+
+id="pcshsYear"
+
+min="1900"
+
+max="2099"
+
+placeholder="Enter graduation year">
+
+
+</div>
+
+
+
+
+
+
+<!-- ==========================
+   CURRENT COUNTRY
+========================== -->
+
+
+<label>
+
+What country do you currently live?
+
+</label>
+
+
+
+<select
+
+id="currentCountry"
+
+name="current_country"
+
+required>
+
+
+<option value="" disabled selected>
+
+Select Country
+
+</option>
+
+
+<option value="US of A">
+
+US of A
+
+</option>
+
+
+<option value="CANADA">
+
+CANADA
+
+</option>
+
+
+<option value="OTHER Countries">
+
+OTHER Countries
+
+</option>
+
+
+</select>
+
+
+
+
+
+<div id="otherCountryDiv" style="display:none;">
+
+
+<label>
+
+PLEASE INDICATE:
+
+</label>
+
+
+
+<input
+
+type="text"
+
+name="other_country"
+
+id="otherCountry"
+
+placeholder="Enter country name">
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ==========================
+   EMAIL
+========================== -->
+
+
+<label>
+
+Email
+
+</label>
+
+
+<input
+
+type="email"
+
+name="_replyto"
+
+required>
+
+
+
+
+
+
+<!-- ==========================
+   SHIRT SIZE
+========================== -->
+
+
+<label>
+
+Your T-Shirt Size
+
+</label>
+
+
+
+<select
+
+name="main_shirt_size"
+
+required>
+
+
+<option value="" disabled selected>
+
+Select Size
+
+</option>
+
+
+<option value="S">
+
+S
+
+</option>
+
+
+<option value="M">
+
+M
+
+</option>
+
+
+<option value="L">
+
+L
+
+</option>
+
+
+<option value="XL">
+
+XL
+
+</option>
+
+
+<option value="2XL">
+
+2XL
+
+</option>
+
+
+<option value="3XL">
+
+3XL
+
+</option>
+
+
+</select>
+
+
+
+
+
+
+<!-- ==========================
+   GUESTS
+========================== -->
+
+
+<label>
+
+Number of Guests
+
+</label>
+
+
+
+<input
+
+type="number"
+
+id="guestCount"
+
+name="guest_count"
+
+min="0"
+
+value="0">
+
+
+
+
+
+<div id="guestFields"></div>
+
+
+
+
+
+<input
+
+type="hidden"
+
+name="guest_details"
+
+id="guestDetails">
+
+<!-- ==========================
+   REUNION MEMORABILIA
+========================== -->
+
+
+<hr>
+
+
+<h3 class="section-title">
+
+Reunion Memorabilia (Optional)
+
+</h3>
+
+
+
+
+<label>
+
+Reunion Cap Quantity ($20)
+
+</label>
+
+
+
+<input
+
+type="number"
+
+name="reunion_cap_qty"
+
+id="reunionCapQty"
+
+min="0"
+
+value="0">
+
+
+
+
+
+<p class="note">
+
+📌 Note: Reunion Cap orders require a minimum of 50 confirmed orders before a work order will be placed.
+
+</p>
+
+
+
+
+
+<input
+
+type="hidden"
+
+name="cap_details"
+
+id="capDetails">
+
+
+
+
+
+
+<input
+
+type="hidden"
+
+name="_next"
+
+value="index.html">
+
+
+
+
+
+
+<button type="submit">
+
+SUBMIT ATTENDEE'S REGISTRATION
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2027 Batang Nichols Reunion
+
+</p>
+
+</footer>
+
+
+
+
+
+<script>
+
+
+const guestCount =
+document.getElementById("guestCount");
+
+
+const guestFields =
+document.getElementById("guestFields");
+
+
+const rsvpForm =
+document.getElementById("rsvpForm");
+
+
+const capQty =
+document.getElementById("reunionCapQty");
+
+
+
+
+
+/* ==========================
+   NABES YEAR DISPLAY
+========================== */
+
+
+const nabesGraduate =
+document.getElementById("nabesGraduate");
+
+
+const nabesYearDiv =
+document.getElementById("nabesYearDiv");
+
+
+const nabesYear =
+document.getElementById("nabesYear");
+
+
+
+nabesGraduate.addEventListener("change",function(){
+
+
+if(this.value==="Yes"){
+
+
+nabesYearDiv.style.display="block";
+
+nabesYear.required=true;
+
+
+}
+
+else{
+
+
+nabesYearDiv.style.display="none";
+
+nabesYear.required=false;
+
+nabesYear.value="";
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+/* ==========================
+   PCSHS YEAR DISPLAY
+========================== */
+
+
+const pcshsGraduate =
+document.getElementById("pcshsGraduate");
+
+
+const pcshsYearDiv =
+document.getElementById("pcshsYearDiv");
+
+
+const pcshsYear =
+document.getElementById("pcshsYear");
+
+
+
+pcshsGraduate.addEventListener("change",function(){
+
+
+if(this.value==="Yes"){
+
+
+pcshsYearDiv.style.display="block";
+
+pcshsYear.required=true;
+
+
+}
+
+else{
+
+
+pcshsYearDiv.style.display="none";
+
+pcshsYear.required=false;
+
+pcshsYear.value="";
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+/* ==========================
+   CURRENT COUNTRY LOGIC
+========================== */
+
+
+const currentCountry =
+document.getElementById("currentCountry");
+
+
+const otherCountryDiv =
+document.getElementById("otherCountryDiv");
+
+
+const otherCountry =
+document.getElementById("otherCountry");
+
+
+
+currentCountry.addEventListener("change",function(){
+
+
+if(this.value==="OTHER Countries"){
+
+
+otherCountryDiv.style.display="block";
+
+otherCountry.required=true;
+
+
+}
+
+else{
+
+
+otherCountryDiv.style.display="none";
+
+otherCountry.required=false;
+
+otherCountry.value="";
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+/* ==========================
+   GUEST CREATION
+========================== */
+
+
+guestCount.oninput=function(){
+
+
+guestFields.innerHTML="";
+
+
+for(
+
+let i=1;
+
+i<=Number(guestCount.value);
+
+i++
+
+){
+
+
+guestFields.innerHTML += `
+
+
+<div class="guest">
+
+
+<label>
+
+Guest ${i} Full Name
+
+</label>
+
+
+<input
+
+type="text"
+
+name="guest_${i}_name"
+
+placeholder="Enter guest full name"
+
+required>
+
+
+</div>
+
+
+`;
+
+
+}
+
+
+};
+
+
+
+
+
+
+
+/* ==========================
+   PREPARE FORM DATA
+========================== */
+
+
+rsvpForm.onsubmit=function(){
+
+
+let guests=[];
+
+
+
+document
+
+.querySelectorAll(".guest")
+
+.forEach(function(guest){
+
+
+guests.push(
+
+guest.querySelector("input").value
+
+);
+
+
+});
+
+
+
+
+
+document
+
+.getElementById("guestDetails")
+
+.value=
+
+JSON.stringify(guests);
+
+
+
+
+
+
+
+let capQuantity=
+
+Number(capQty.value);
+
+
+
+
+
+if(capQuantity>0){
+
+
+
+document
+
+.getElementById("capDetails")
+
+.value=
+
+"Reunion Cap Quantity: "
+
++
+
+capQuantity
+
++
+
+" | Total: $"
+
++
+
+(capQuantity*20);
+
+
+
+}
+
+else{
+
+
+document
+
+.getElementById("capDetails")
+
+.value=
+
+"No Reunion Cap ordered";
+
+
+}
+
+
+
+
+
+
+setTimeout(function(){
+
+
+rsvpForm.reset();
+
+
+guestFields.innerHTML="";
+
+
+guestCount.value=0;
+
+
+capQty.value=0;
+
+
+nabesYearDiv.style.display="none";
+
+
+pcshsYearDiv.style.display="none";
+
+
+otherCountryDiv.style.display="none";
+
+
+otherCountry.value="";
+
+
+
+},500);
+
+
+
+return true;
+
+
+};
+
+
+
+
+
+
+
+
+/* ==========================
+   RESET AFTER BACK BUTTON
+========================== */
+
+
+window.onpageshow=function(event){
+
+
+
+if(event.persisted){
+
+
+rsvpForm.reset();
+
+
+guestFields.innerHTML="";
+
+
+guestCount.value=0;
+
+
+capQty.value=0;
+
+
+nabesYearDiv.style.display="none";
+
+
+pcshsYearDiv.style.display="none";
+
+
+otherCountryDiv.style.display="none";
+
+
+otherCountry.value="";
+
+
+}
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
+
+
+ 
