@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vancouver Attractions | Batang Nichols Reunion 2027</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#fff7ee;
+    color:#333;
+    padding-top:70px;
+
+}
+
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+nav.main-nav{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#d9715f;
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+
+    padding:15px;
+
+    z-index:999;
+
+}
+
+nav.main-nav a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+nav.main-nav a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* ===========================
+   PAGE HEADER
+=========================== */
+
+header{
+
+    background:linear-gradient(
+        to bottom,
+        #7ec8e3,
+        #dff3ff);
+
+    text-align:center;
+
+    padding:60px 20px 45px;
+
+}
+
+header h1{
+
+    color:#d9715f;
+
+    font-size:2.6rem;
+
+    margin-bottom:15px;
+
+}
+
+header p{
+
+    font-size:1.15rem;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:35px auto;
+
+}
+
+
+/* ===========================
+   INTRO BOX
+=========================== */
+
+.intro{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+
+    text-align:center;
+
+}
+
+.intro h2{
+
+    color:#d9715f;
+
+    margin-bottom:10px;
+
+}
+
+
+/* ===========================
+   SECTION TITLES
+=========================== */
+
+.section-title{
+
+    color:#d9715f;
+
+    margin:45px 0 20px;
+
+    font-size:1.8rem;
+
+}
+
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+}
+
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.card-content{
+
+    padding:18px;
+
+}
+
+.card-content h3{
+
+    color:#d9715f;
+
+    margin-bottom:10px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:#d9715f;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+    margin-bottom:12px;
+
+}
+
+.info{
+
+    min-height:120px;
+
+}
+
+.map-button{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:10px 18px;
+
+    background:#d9715f;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+}
+
+.map-button:hover{
+
+    background:#bf5d4c;
+
+}
+
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+
+#lightbox{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    z-index:5000;
+
+}
+
+#lightbox img{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    max-width:90%;
+
+    max-height:85%;
+
+    border-radius:8px;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:35px;
+
+    color:white;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+}
+
+.nav-button{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    font-size:50px;
+
+    background:rgba(255,255,255,.25);
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+#previous{
+
+    left:25px;
+
+}
+
+#next{
+
+    right:25px;
+
+}
+
+.caption{
+
+    position:absolute;
+
+    bottom:25px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:700px){
+
+header h1{
+
+font-size:2rem;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.card img{
+
+height:220px;
+
+}
+
+}
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+color:#666;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="main-nav">
+
+<a href="index.html">Home</a>
+
+<a href="gallery.html">Photo Gallery</a>
+
+<a href="rsvp.html">Registration</a>
+
+<a href="payment.html">Payment</a>
+
+<a href="merchandise.html">Reunion Memorabilia</a>
+
+<a href="attendees.html">Confirmed Attendees</a>
+
+<a href="attraction.html">Vancouver Attractions</a>
+
+<a href="exit.html">EXIT</a>
+
+</nav>
+
+<header>
+
+<h1>Vancouver & British Columbia Attractions</h1>
+
+<p>
+Make your Batang Nichols Reunion 2027 even more memorable by exploring some of the most beautiful destinations in British Columbia. Most attractions are within a short drive from the reunion venue, while others are perfect for a day trip or extended vacation.
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="intro">
+
+<h2>Welcome to Beautiful British Columbia</h2>
+
+<p>
+Whether you're visiting from the Philippines or traveling from another province, Vancouver offers stunning parks, mountains, gardens, waterfronts, and unforgettable day trips. Click any photo to view it full screen.
+</p>
+
+</div>
+
+<!-- ===========================
+     VANCOUVER HIGHLIGHTS
+=========================== -->
+
+
+<h2 class="section-title">
+🌆 Vancouver Highlights
+</h2>
+
+
+<div class="gallery">
+
+
+
+<!-- CANADA PLACE -->
+
+<div class="card">
+
+
+<img src="canada place.jpg"
+alt="Canada Place"
+onclick="openLightbox(0)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌊 Waterfront Landmark
+</span>
+
+
+<h3>
+Canada Place
+</h3>
+
+
+<div class="info">
+
+<p>
+Vancouver's iconic waterfront landmark
+featuring the famous white sails,
+cruise ship terminal, and beautiful
+views of Burrard Inlet.
+</p>
+
+
+<p>
+🚗 Approx. 20 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Canada+Place+Vancouver"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- STANLEY PARK -->
+
+
+<div class="card">
+
+
+<img src="stanley park.jpg"
+alt="Stanley Park"
+onclick="openLightbox(1)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌲 Nature
+</span>
+
+
+<h3>
+Stanley Park
+</h3>
+
+
+<div class="info">
+
+<p>
+One of Vancouver's most famous attractions.
+Enjoy forests, beaches, seawall walks,
+totem poles, and spectacular city views.
+</p>
+
+
+<p>
+🚗 Approx. 25 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Stanley+Park+Vancouver"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- GASTOWN -->
+
+
+<div class="card">
+
+
+<img src="gastown.jpg"
+alt="Gastown"
+onclick="openLightbox(2)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏛 Historic District
+</span>
+
+
+<h3>
+Gastown
+</h3>
+
+
+<div class="info">
+
+<p>
+Vancouver's oldest neighbourhood,
+known for cobblestone streets,
+historic buildings, restaurants,
+and the famous Steam Clock.
+</p>
+
+
+<p>
+🚗 Approx. 20 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Gastown+Vancouver"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- GRANVILLE ISLAND -->
+
+
+<div class="card">
+
+
+<img src="grandville island.jpg"
+alt="Granville Island"
+onclick="openLightbox(3)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🎨 Market & Culture
+</span>
+
+
+<h3>
+Granville Island
+</h3>
+
+
+<div class="info">
+
+<p>
+A popular waterfront destination
+with public markets, restaurants,
+shops, galleries, and scenic views.
+</p>
+
+
+<p>
+🚗 Approx. 20 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Granville+Island+Vancouver"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- CAPILANO SUSPENSION BRIDGE -->
+
+
+<div class="card">
+
+
+<img src="capilano suspension bridge.jpg"
+alt="Capilano Suspension Bridge"
+onclick="openLightbox(4)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌉 Adventure
+</span>
+
+
+<h3>
+Capilano Suspension Bridge
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-famous rainforest attraction
+featuring a spectacular suspension bridge,
+forest trails, and breathtaking canyon views.
+</p>
+
+
+<p>
+🚗 Approx. 30 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Capilano+Suspension+Bridge"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- ===========================
+     MOUNTAINS & NATURE
+=========================== -->
+
+
+<h2 class="section-title">
+🏔 Mountains & Nature
+</h2>
+
+
+<div class="gallery">
+
+
+
+<!-- GROUSE MOUNTAIN -->
+
+
+<div class="card">
+
+
+<img src="grouse mountain.jpg"
+alt="Grouse Mountain"
+onclick="openLightbox(5)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏔 Mountain Adventure
+</span>
+
+
+<h3>
+Grouse Mountain
+</h3>
+
+
+<div class="info">
+
+<p>
+A popular North Vancouver destination
+with spectacular views of Vancouver,
+hiking trails, wildlife, and the famous
+Skyride gondola.
+</p>
+
+
+<p>
+🚗 Approx. 35 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Grouse+Mountain+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- CYPRESS MOUNTAIN -->
+
+
+<div class="card">
+
+
+<img src="cypress mountain.jpg"
+alt="Cypress Mountain"
+onclick="openLightbox(6)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏔 Scenic Views
+</span>
+
+
+<h3>
+Cypress Mountain
+</h3>
+
+
+<div class="info">
+
+<p>
+A beautiful mountain destination
+offering hiking, viewpoints, winter
+activities, and panoramic views of
+Vancouver and Howe Sound.
+</p>
+
+
+<p>
+🚗 Approx. 45 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Cypress+Mountain+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ROCKY POINT PARK -->
+
+
+<div class="card">
+
+
+<img src="rocky point park.jpg"
+alt="Rocky Point Park"
+onclick="openLightbox(7)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌊 Waterfront Park
+</span>
+
+
+<h3>
+Rocky Point Park
+</h3>
+
+
+<div class="info">
+
+<p>
+A scenic waterfront park in Port Moody
+featuring Burrard Inlet views, walking
+trails, a pier, restaurants, and the
+popular Rocky Point Ice Cream.
+</p>
+
+
+<p>
+🚗 Approx. 25 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Rocky+Point+Park+Port+Moody"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- LAFARGE LAKE -->
+
+
+<div class="card">
+
+
+<img src="lafarge lake.jpg"
+alt="Lafarge Lake"
+onclick="openLightbox(8)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌳 Lake & Trails
+</span>
+
+
+<h3>
+Lafarge Lake
+</h3>
+
+
+<div class="info">
+
+<p>
+A peaceful Coquitlam destination
+with walking trails, gardens,
+water views, and seasonal events.
+</p>
+
+
+<p>
+🚗 Approx. 30 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Lafarge+Lake+Coquitlam"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- VANDUSEN BOTANICAL GARDEN -->
+
+
+<div class="card">
+
+
+<img src="vandusen.jpg"
+alt="VanDusen Botanical Garden"
+onclick="openLightbox(9)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌺 Botanical Garden
+</span>
+
+
+<h3>
+VanDusen Botanical Garden
+</h3>
+
+
+<div class="info">
+
+<p>
+A beautiful Vancouver garden featuring
+colourful flowers, walking paths,
+ponds, and seasonal displays.
+</p>
+
+
+<p>
+🚗 Approx. 15 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=VanDusen+Botanical+Garden"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- ===========================
+     GREAT DAY TRIPS
+=========================== -->
+
+
+<h2 class="section-title">
+🚗 Great Day Trips & Extended Adventures
+</h2>
+
+
+<div class="gallery">
+
+
+
+
+
+
+<!-- WHISTLER -->
+
+
+<div class="card">
+
+
+<img src="whistler mountain.jpg"
+alt="Whistler Mountain"
+onclick="openLightbox(10)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏔 World Famous Resort
+</span>
+
+
+<h3>
+Whistler Mountain
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-renowned mountain destination
+known for skiing, hiking, beautiful scenery,
+shopping, restaurants, and outdoor adventures.
+</p>
+
+
+<p>
+🚗 Approx. 2 hours from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Whistler+Mountain+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BUTCHART GARDENS -->
+
+
+<div class="card">
+
+
+<img src="butchart gardens.jpg"
+alt="Butchart Gardens"
+onclick="openLightbox(11)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌸 Garden Paradise
+</span>
+
+
+<h3>
+Butchart Gardens
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-famous garden near Victoria
+featuring spectacular flowers, walking paths,
+ponds, and beautiful seasonal displays.
+</p>
+
+
+<p>
+⛴ Ferry trip required
+<br>
+🚗 Approx. 4 hours total travel time
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Butchart+Gardens+Victoria+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- VICTORIA -->
+
+
+<div class="card">
+
+
+<img src="victoria.jpg"
+alt="Victoria British Columbia"
+onclick="openLightbox(12)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+⛴ Island Destination
+</span>
+
+
+<h3>
+Victoria, British Columbia
+</h3>
+
+
+<div class="info">
+
+<p>
+British Columbia's capital city featuring
+the Inner Harbour, historic architecture,
+gardens, museums, and waterfront scenery.
+</p>
+
+
+<p>
+⛴ Ferry trip required
+<br>
+🚗 Approx. 4 hours total travel time
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Victoria+BC+Inner+Harbour"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- LAKE LOUISE -->
+
+
+<div class="card">
+
+
+<img src="lake louise park.jpg"
+alt="Lake Louise"
+onclick="openLightbox(13)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏞 Canadian Rockies
+</span>
+
+
+<h3>
+Lake Louise
+</h3>
+
+
+<div class="info">
+
+<p>
+One of Canada's most breathtaking destinations.
+Famous for turquoise waters, mountain scenery,
+hiking trails, and the Canadian Rockies.
+</p>
+
+
+<p>
+✈ Recommended: Fly to Calgary
+<br>
+🚗 Approx. 9–10 hours driving from Vancouver
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- HARRISON HOT SPRINGS -->
+
+
+<div class="card">
+
+
+<img src="harrison hot springs.jpg"
+alt="Harrison Hot Springs"
+onclick="openLightbox(14)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+♨ Relaxation
+</span>
+
+
+<h3>
+Harrison Hot Springs
+</h3>
+
+
+<div class="info">
+
+<p>
+A peaceful lakeside destination known for
+natural hot springs, mountain views,
+beaches, boating, and relaxing getaways.
+</p>
+
+
+<p>
+🚗 Approx. 1 hour 45 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Harrison+Hot+Springs+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ===========================
+     GREAT DAY TRIPS
+=========================== -->
+
+
+<h2 class="section-title">
+🚗 Great Day Trips & Extended Adventures
+</h2>
+
+
+<div class="gallery">
+
+
+
+
+
+
+<!-- WHISTLER -->
+
+
+<div class="card">
+
+
+<img src="whistler mountain.jpg"
+alt="Whistler Mountain"
+onclick="openLightbox(10)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏔 World Famous Resort
+</span>
+
+
+<h3>
+Whistler Mountain
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-renowned mountain destination
+known for skiing, hiking, beautiful scenery,
+shopping, restaurants, and outdoor adventures.
+</p>
+
+
+<p>
+🚗 Approx. 2 hours from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Whistler+Mountain+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BUTCHART GARDENS -->
+
+
+<div class="card">
+
+
+<img src="butchart gardens.jpg"
+alt="Butchart Gardens"
+onclick="openLightbox(11)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🌸 Garden Paradise
+</span>
+
+
+<h3>
+Butchart Gardens
+</h3>
+
+
+<div class="info">
+
+<p>
+A world-famous garden near Victoria
+featuring spectacular flowers, walking paths,
+ponds, and beautiful seasonal displays.
+</p>
+
+
+<p>
+⛴ Ferry trip required
+<br>
+🚗 Approx. 4 hours total travel time
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Butchart+Gardens+Victoria+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- VICTORIA -->
+
+
+<div class="card">
+
+
+<img src="victoria.jpg"
+alt="Victoria British Columbia"
+onclick="openLightbox(12)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+⛴ Island Destination
+</span>
+
+
+<h3>
+Victoria, British Columbia
+</h3>
+
+
+<div class="info">
+
+<p>
+British Columbia's capital city featuring
+the Inner Harbour, historic architecture,
+gardens, museums, and waterfront scenery.
+</p>
+
+
+<p>
+⛴ Ferry trip required
+<br>
+🚗 Approx. 4 hours total travel time
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Victoria+BC+Inner+Harbour"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- LAKE LOUISE -->
+
+
+<div class="card">
+
+
+<img src="lake louise park.jpg"
+alt="Lake Louise"
+onclick="openLightbox(13)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+🏞 Canadian Rockies
+</span>
+
+
+<h3>
+Lake Louise
+</h3>
+
+
+<div class="info">
+
+<p>
+One of Canada's most breathtaking destinations.
+Famous for turquoise waters, mountain scenery,
+hiking trails, and the Canadian Rockies.
+</p>
+
+
+<p>
+✈ Recommended: Fly to Calgary
+<br>
+🚗 Approx. 9–10 hours driving from Vancouver
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Lake+Louise+Alberta"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- HARRISON HOT SPRINGS -->
+
+
+<div class="card">
+
+
+<img src="harrison hot springs.jpg"
+alt="Harrison Hot Springs"
+onclick="openLightbox(14)">
+
+
+
+<div class="card-content">
+
+
+<span class="badge">
+♨ Relaxation
+</span>
+
+
+<h3>
+Harrison Hot Springs
+</h3>
+
+
+<div class="info">
+
+<p>
+A peaceful lakeside destination known for
+natural hot springs, mountain views,
+beaches, boating, and relaxing getaways.
+</p>
+
+
+<p>
+🚗 Approx. 1 hour 45 minutes from
+Hilton Vancouver Metrotown
+</p>
+
+
+</div>
+
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Harrison+Hot+Springs+BC"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<!-- ===========================
+     LIGHTBOX
+=========================== -->
+
+
+<div id="lightbox">
+
+
+<span class="close"
+onclick="closeLightbox()">
+
+&times;
+
+</span>
+
+
+
+<div id="previous"
+class="nav-button"
+onclick="changePhoto(-1)">
+
+&#10094;
+
+</div>
+
+
+
+
+<img id="lightbox-image"
+src="">
+
+
+
+<div id="next"
+class="nav-button"
+onclick="changePhoto(1)">
+
+&#10095;
+
+</div>
+
+
+
+
+<div class="caption">
+
+<span id="photo-title"></span>
+
+<br>
+
+<span id="photo-number"></span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2027 Batang Nichols Group • Bringing people together.
+</p>
+
+<p>
+Enjoy exploring beautiful British Columbia!
+</p>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+// ===========================
+// PHOTO DATABASE
+// ===========================
+
+
+const photos = [
+
+
+"canada place.jpg",
+
+"stanley park.jpg",
+
+"gastown.jpg",
+
+"grandville island.jpg",
+
+"capilano suspension bridge.jpg",
+
+"grouse mountain.jpg",
+
+"cypress mountain.jpg",
+
+"rocky point park.jpg",
+
+"lafarge lake.jpg",
+
+"vandusen.jpg",
+
+"whistler mountain.jpg",
+
+"butchart gardens.jpg",
+
+"victoria.jpg",
+
+"lake louise park.jpg",
+
+"harrison hot springs.jpg"
+
+
+];
+
+
+
+
+
+const names = [
+
+
+"Canada Place",
+
+"Stanley Park",
+
+"Gastown",
+
+"Granville Island",
+
+"Capilano Suspension Bridge",
+
+"Grouse Mountain",
+
+"Cypress Mountain",
+
+"Rocky Point Park",
+
+"Lafarge Lake",
+
+"VanDusen Botanical Garden",
+
+"Whistler Mountain",
+
+"Butchart Gardens",
+
+"Victoria, British Columbia",
+
+"Lake Louise",
+
+"Harrison Hot Springs"
+
+
+];
+
+
+
+
+
+let currentPhoto = 0;
+
+
+
+
+
+
+
+// ===========================
+// OPEN LIGHTBOX
+// ===========================
+
+
+function openLightbox(index){
+
+
+currentPhoto=index;
+
+
+document.getElementById("lightbox")
+.style.display="block";
+
+
+showPhoto();
+
+
+}
+
+
+
+
+
+
+
+// ===========================
+// DISPLAY PHOTO
+// ===========================
+
+
+function showPhoto(){
+
+
+document.getElementById("lightbox-image")
+.src = photos[currentPhoto];
+
+
+
+document.getElementById("photo-title")
+.innerHTML = names[currentPhoto];
+
+
+
+document.getElementById("photo-number")
+.innerHTML =
+
+"Photo " +
+(currentPhoto + 1) +
+" of " +
+photos.length;
+
+
+}
+
+
+
+
+
+
+
+// ===========================
+// NEXT / PREVIOUS
+// ===========================
+
+
+function changePhoto(direction){
+
+
+currentPhoto += direction;
+
+
+
+if(currentPhoto < 0){
+
+currentPhoto = photos.length - 1;
+
+}
+
+
+
+if(currentPhoto >= photos.length){
+
+currentPhoto = 0;
+
+}
+
+
+
+showPhoto();
+
+
+}
+
+
+
+
+
+
+
+// ===========================
+// CLOSE LIGHTBOX
+// ===========================
+
+
+function closeLightbox(){
+
+
+document.getElementById("lightbox")
+.style.display="none";
+
+
+}
+
+
+
+
+
+
+
+// ===========================
+// KEYBOARD CONTROLS
+// ===========================
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+
+if(event.key === "Escape"){
+
+closeLightbox();
+
+}
+
+
+
+if(event.key === "ArrowRight"){
+
+changePhoto(1);
+
+}
+
+
+
+if(event.key === "ArrowLeft"){
+
+changePhoto(-1);
+
+}
+
+
+});
+
+
+
+
+
+
+
+// ===========================
+// CLICK OUTSIDE TO CLOSE
+// ===========================
+
+
+document.getElementById("lightbox")
+.onclick=function(event){
+
+
+if(event.target === this){
+
+closeLightbox();
+
+}
+
+
+};
+
+
+
+</script>
+
+
+</body>
+
+</html>
+
+
+
