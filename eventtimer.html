@@ -1,0 +1,410 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Batang Nichols Reunion 2027 Countdown
+</title>
+
+
+<style>
+
+body {
+
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    font-family:"Segoe UI", Arial, sans-serif;
+
+    background:
+    linear-gradient(
+    to bottom,
+    #7ec8e3,
+    #dff3ff
+    );
+
+    color:#333;
+
+    overflow:hidden;
+
+}
+
+
+.container {
+
+    width:90%;
+
+}
+
+
+.logo {
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    border:6px solid white;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+}
+
+
+
+h1 {
+
+    color:#d9715f;
+
+    font-size:4rem;
+
+    margin:10px;
+
+}
+
+
+
+h2 {
+
+    color:#1e6fbf;
+
+    font-size:2.5rem;
+
+    font-style:italic;
+
+}
+
+
+
+.info {
+
+    font-size:2rem;
+
+    margin-top:30px;
+
+}
+
+
+
+.countdown {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.box {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    min-width:150px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.2);
+
+}
+
+
+
+.number {
+
+    font-size:4rem;
+
+    font-weight:bold;
+
+    color:#d9715f;
+
+}
+
+
+
+.label {
+
+    font-size:1.5rem;
+
+}
+
+
+
+.footer {
+
+    margin-top:40px;
+
+    font-size:1.5rem;
+
+    color:#666;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<img src="logof.png" class="logo">
+
+
+<h1>
+Batang Nichols Reunion 2027
+</h1>
+
+
+<h2>
+Memories Took Flight in Nichols
+</h2>
+
+
+
+<div class="info">
+
+📍 Hilton Vancouver Metrotown<br>
+
+📅 September 4, 2027
+
+</div>
+
+
+
+<div class="countdown">
+
+
+<div class="box">
+
+<div class="number" id="days">
+0
+</div>
+
+<div class="label">
+Days
+</div>
+
+</div>
+
+
+
+
+<div class="box">
+
+<div class="number" id="hours">
+0
+</div>
+
+<div class="label">
+Hours
+</div>
+
+</div>
+
+
+
+
+<div class="box">
+
+<div class="number" id="minutes">
+0
+</div>
+
+<div class="label">
+Minutes
+</div>
+
+</div>
+
+
+
+
+<div class="box">
+
+<div class="number" id="seconds">
+0
+</div>
+
+<div class="label">
+Seconds
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="footer">
+
+See you in Vancouver! 🇨🇦🎉
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+const eventDate =
+
+new Date("September 4, 2027 16:00:00").getTime();
+
+
+
+
+function updateCountdown(){
+
+
+const now = new Date().getTime();
+
+
+const difference = eventDate - now;
+
+
+
+if(difference <= 0){
+
+
+document.querySelector(".container").innerHTML =
+
+`
+
+<h1>
+
+🎉 The Reunion Is Happening Today!
+
+</h1>
+
+
+<h2>
+
+Welcome to Batang Nichols Reunion 2027
+
+</h2>
+
+`;
+
+return;
+
+}
+
+
+
+
+
+document.getElementById("days").innerHTML =
+
+Math.floor(
+
+difference /
+
+(1000*60*60*24)
+
+);
+
+
+
+
+document.getElementById("hours").innerHTML =
+
+Math.floor(
+
+(difference %
+
+(1000*60*60*24))
+
+/
+
+(1000*60*60)
+
+);
+
+
+
+
+document.getElementById("minutes").innerHTML =
+
+Math.floor(
+
+(difference %
+
+(1000*60*60))
+
+/
+
+(1000*60)
+
+);
+
+
+
+
+document.getElementById("seconds").innerHTML =
+
+Math.floor(
+
+(difference %
+
+(1000*60))
+
+/
+
+1000
+
+);
+
+
+
+}
+
+
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+
+
+</script>
+
+
+</body>
+
+</html>
+```
